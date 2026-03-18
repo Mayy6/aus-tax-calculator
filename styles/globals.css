@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+:root {
+  --app-bg-start: 245 248 255; /* slate-50 */
+  --app-bg-end: 236 239 255; /* indigo-50 */
+}
+
+body {
+  background: radial-gradient(1000px 600px at 10% 10%, rgba(var(--app-bg-start) / 0.6), transparent 20%), radial-gradient(800px 500px at 90% 90%, rgba(var(--app-bg-end) / 0.6), transparent 20%), #f8fafc;
+  color: #0f172a;
+}
+
+.bg-app-bg {
+  background: linear-gradient(180deg, rgba(241,245,249,0.6), rgba(255,255,255,0.6));
+}
+
+/* subtle focus rings for inputs when Tailwind classes not enough */
+input[type="number"], input[type="range"] {
+  transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+input:focus {
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+  outline: none;
+}
+
+/* Card and layout tweaks */
+.rounded-xl { border-radius: 0.75rem; }
+.shadow-sm { box-shadow: 0 6px 16px rgba(2,6,23,0.04); }
+.shadow-2xl { box-shadow: 0 30px 60px rgba(2,6,23,0.12); }
+
+/* form checkbox simple style */
+input[type="checkbox"].form-checkbox {
+  width: 16px; height: 16px; accent-color: #4f46e5;
+}
+
+/* small responsive flag placeholder if image missing */
+.bg-flag { background-image: linear-gradient(90deg,#00247d 0%,#cf142b 100%); }
